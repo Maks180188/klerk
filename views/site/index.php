@@ -4,6 +4,25 @@
 
 $this->title = 'Klerk';
 
+//First Task
+function getBalance(string $leftString, string $rightString): string
+{
+    $leftValue = calculateOneValue($leftString);
+    $rightValue = calculateOneValue($rightString);
+
+    return $leftValue > $rightValue ? 'Left' : 'Right';
+}
+
+function calculateOneValue(string $value): int {
+    $result = 0;
+    for($i = 0; $i < strlen($value); ++$i) {
+        $result = $value[$i] === '!' ? $result + 2 : $result + 3;
+    }
+    return $result;
+}
+
+echo getBalance('!!????!!?' , '??!!!!');
+
 ?>
 <div class="site-index">
 
