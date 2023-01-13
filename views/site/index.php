@@ -10,7 +10,7 @@ function getBalance(string $leftString, string $rightString): string
     $leftValue = calculateOneValue($leftString);
     $rightValue = calculateOneValue($rightString);
 
-    return $leftValue > $rightValue ? 'Left' : 'Right';
+    return $leftValue === $rightValue ? 'equally' : ($leftValue > $rightValue ? 'Left' : 'Right');
 }
 
 function calculateOneValue(string $value): int {
